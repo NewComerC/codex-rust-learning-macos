@@ -14,6 +14,8 @@
 - 默认你理解变量、函数、条件和循环；不需要提前了解 Cargo、所有权或 Rust 工程结构。
 - 前置：能访问 GitHub；按下面指引安装 Rust 工具链，或先用 [Rust Playground](https://play.rust-lang.org/) 在线运行小例子（文章给出的备选方式）。
 
+- **Intel Mac 与 Apple Silicon 的差异（实测说明）**：本仓已在 Intel Mac（`x86_64`，Intel Core i5）上实机跑通。Intel Mac 的 rustup 默认 host triple 为 `x86_64-apple-darwin`，Apple Silicon（M 系列）为 `aarch64-apple-darwin`；差异仅在工具链/生成二进制的 CPU 架构与 rustup 默认 host triple，本仓示例的源码、`rustc`/`cargo run` 命令与预期打印输出完全一致，无需改命令。注意不要把 Intel Mac 生成的可执行文件与 Apple Silicon 生成的可执行文件混作同一架构产物分发；如需确认本机架构，运行 `uname -m`（`x86_64` 为 Intel，`arm64` 为 Apple Silicon）与 `rustc --version --verbose` 查看 `host:` 一行。
+
 ## 学习路线（按文章四部分）
 
 1. **Rust 语言全景**：编译执行、类型与抽象、所有权与资源、Option/Result、并发与安全——先建立整体认识（以读文章为主）。
